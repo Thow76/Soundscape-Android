@@ -122,7 +122,9 @@ fun RoutesScreen(navController: NavController,
             }
 
             // Display the list of routes
-            RouteList(uiState = uiState)
+            RouteList(
+                uiState = uiState,
+                navController = navController)
         }
     }
 }

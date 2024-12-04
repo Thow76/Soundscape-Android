@@ -7,6 +7,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import org.scottishtecharmy.soundscape.database.local.model.RouteData
 import org.scottishtecharmy.soundscape.database.repository.RoutesRepository
 import javax.inject.Inject
 
@@ -54,6 +55,9 @@ class RoutesViewModel @Inject constructor(
         }
     }
 
+    fun getRouteByName(routeId: String): RouteData? {
+        return _uiState.value.routes.find { it.name == routeId }
+    }
 
     fun clearErrorMessage() {
         _uiState.value = _uiState.value.copy(errorMessage = null)
