@@ -15,7 +15,6 @@ import org.scottishtecharmy.soundscape.screens.home.HomeRoutes
 import org.scottishtecharmy.soundscape.screens.markers_routes.components.MarkersAndRoutesAppBar
 import org.scottishtecharmy.soundscape.screens.markers_routes.components.MarkersAndRoutesTabs
 import org.scottishtecharmy.soundscape.screens.markers_routes.marker_route_screens.RoutesScreen
-import org.scottishtecharmy.soundscape.screens.markers_routes.navigation.ScreensForMarkersAndRoutes
 import org.scottishtecharmy.soundscape.ui.theme.SoundscapeTheme
 
 @Composable
@@ -66,7 +65,7 @@ fun MarkersAndRoutesScreen(
 fun MarkersAndRoutesPreview() {
     SoundscapeTheme {
         MarkersAndRoutesScreen(
-            mainNavController = rememberNavController(),
-            selectedTab = ScreensForMarkersAndRoutes.Markers.route)
+            mainNavController = rememberNavController())
     }
+    // TODO resolve @Preview render problem to have previews for each tab selection
 }

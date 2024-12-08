@@ -68,7 +68,9 @@ fun MarkersScreen(navController: NavController) {
             )
         }
     }
+
 }
+
 
 @Preview(showBackground = true)
 @Composable
@@ -77,4 +79,5 @@ fun MarkersScreenPreview() {
         MarkersScreen(
             navController = rememberNavController())
     }
+    //TODO resolve @Preview render problem
 }

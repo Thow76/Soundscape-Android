@@ -2,6 +2,12 @@ package org.scottishtecharmy.soundscape.screens.markers_routes.components
 
 import android.util.Log
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
@@ -9,6 +15,7 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -16,7 +23,8 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import org.scottishtecharmy.soundscape.screens.markers_routes.navigation.ScreensForMarkersAndRoutes
+import org.scottishtecharmy.soundscape.screens.markers_routes.screens.ScreensForMarkersAndRoutes
+import org.scottishtecharmy.soundscape.ui.theme.SoundscapeTheme
 
 @Composable
 fun MarkersAndRoutesTabs(
@@ -72,3 +80,26 @@ fun MarkersAndRoutesTabs(
     }
 }
 
+@Preview(showBackground = true)
+@Composable
+fun MarkerTabsPreview() {
+    SoundscapeTheme {
+        // Preview with first tab selected
+        MarkersAndRoutesTabs(
+            selectedTabIndex = 0,
+            onTabSelected = { /* Handle tab selection */ }
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun RoutesTabsPreview() {
+    SoundscapeTheme {
+        // Preview with first tab selected
+        MarkersAndRoutesTabs(
+            selectedTabIndex = 1,
+            onTabSelected = { /* Handle tab selection */ }
+        )
+    }
+}

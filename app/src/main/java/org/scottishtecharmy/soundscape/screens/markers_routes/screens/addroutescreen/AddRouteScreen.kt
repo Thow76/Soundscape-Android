@@ -144,13 +144,10 @@ fun AddRouteScreen(
             }
         }
     )
+    //TODO create @Preview that works with viewmodel
 }
 
-@Preview
-@Composable
-fun AddRoutePreview() {
-    SoundscapeTheme {
-        AddRouteScreen(navController = rememberNavController())
-    }
-}
+
+
+
 

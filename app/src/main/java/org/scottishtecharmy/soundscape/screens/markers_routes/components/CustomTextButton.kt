@@ -1,16 +1,24 @@
 package org.scottishtecharmy.soundscape.screens.markers_routes.components
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import org.scottishtecharmy.soundscape.ui.theme.SoundscapeTheme
 
 @Composable
@@ -38,16 +46,19 @@ fun CustomTextButton(
     }
 }
 
-@Preview
+@Preview(fontScale = 1.5f, showBackground = true)
+@Preview(showBackground = true)
 @Composable
 fun CustomTextButtonPreview() {
     SoundscapeTheme {
-        CustomTextButton(
-            onClick = { /*TODO*/ },
-            text = "Done",
-            contentColor = MaterialTheme.colorScheme.onPrimary,
-            textStyle = MaterialTheme.typography.titleMedium,
-            fontWeight = FontWeight.Bold
-        )
+
+            // Default preview
+            CustomTextButton(
+                onClick = { /*TODO*/ },
+                text = "Done",
+                contentColor = MaterialTheme.colorScheme.onPrimary,
+                textStyle = MaterialTheme.typography.titleMedium,
+                fontWeight = FontWeight.Bold
+            )
     }
 }
