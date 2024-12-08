@@ -32,26 +32,22 @@ fun MarkersAndRoutesScreen(
 
     val selectedTabIndex = remember { mutableIntStateOf(initialTabIndex) }
 
-    val showAddIcon = selectedTabIndex.intValue == 1
-
     // Top bar and tabs
     Scaffold(
         topBar = {
             Column {
                 MarkersAndRoutesAppBar(
-                    showAddIcon = showAddIcon,
                     onNavigateUp = { mainNavController.navigateUp()},
                     onNavigateToDestination = {
                         mainNavController.navigate(HomeRoutes.AddRoute.route)
                     },
                 )
+                MarkersAndRoutesTabs(
+                    selectedTabIndex = selectedTabIndex.intValue,
+                    onTabSelected = { index -> selectedTabIndex.intValue = index }
+                )
             }
         },
-        bottomBar = {
-            MarkersAndRoutesTabs(
-                selectedTabIndex = selectedTabIndex.intValue,
-                onTabSelected = { index -> selectedTabIndex.intValue = index }
-            )}
     ) { innerPadding ->
         Box(modifier = Modifier.padding(innerPadding)) {
             when (selectedTabIndex.intValue) {
